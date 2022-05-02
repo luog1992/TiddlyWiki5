@@ -637,14 +637,42 @@
         "title": "$:/plugins/sq/Stories/changelog"
     },
     {
-        "title": "GettingStarted",
+        "title": "$:/ControlPanel",
+        "fromPageRect": {
+            "top": 50.5,
+            "left": 915.3515625,
+            "width": 22.3984375,
+            "right": 937.75,
+            "bottom": 77.375,
+            "height": 26.875
+        }
+    },
+    {
+        "title": "Eth4",
         "fromPageRect": {
             "top": 60.5,
-            "left": 743.1796875,
-            "width": 32.8984375,
-            "right": 776.078125,
-            "bottom": 99.9765625,
-            "height": 39.4765625
+            "left": 915.3515625,
+            "width": 22.3984375,
+            "right": 937.75,
+            "bottom": 87.375,
+            "height": 26.875
         }
+    },
+    {
+        "title": "Eth4",
+        "fromPageRect": {
+            "top": 60.5,
+            "left": 915.3515625,
+            "width": 22.3984375,
+            "right": 937.75,
+            "bottom": 87.375,
+            "height": 26.875
+        }
+    },
+    {
+        "title": "Draft of 'Eth4'"
+    },
+    {
+        "title": "Eth4"
     }
 ]

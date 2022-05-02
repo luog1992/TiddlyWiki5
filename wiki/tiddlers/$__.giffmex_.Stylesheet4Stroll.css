@@ -10,7 +10,10 @@ code {color: #b0a;background-color:#eee;}
 /* COLUMN FIX  FOR 5.2.2 */
 
 .sq-story-rivertwo-scrollable {
-overflow: auto;
+overflow: scroll;
+}
+.sq-story-rivertwo-scrollable::-webkit-scrollbar {
+display: none;
 }
 
 /*TIGHT NOTES*/

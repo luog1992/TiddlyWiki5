@@ -945,11 +945,14 @@ button.tc-btn-invisible.tc-remove-tag-button {
 		left: {{$:/themes/tiddlywiki/vanilla/metrics/storyright}};
 		bottom: 0;
 		right: 0;
-		overflow-y: auto;
-		overflow-x: auto;
+		overflow-y: scroll;
+		overflow-x: scroll;
 		-webkit-overflow-scrolling: touch;
 		margin: 0 0 0 -42px;
-		padding: 71px 0 28px 42px;
+		padding: 20px 0 28px 42px;
+	}
+	.tc-sidebar-scrollable::-webkit-scrollbar {
+		display: none;
 	}
 
 	html[dir="rtl"] .tc-sidebar-scrollable {
@@ -1071,7 +1074,7 @@ button.tc-btn-invisible.tc-remove-tag-button {
 
 @media (min-width: <<sidebarbreakpoint>>) {
 	.tc-tiddler-frame {
-		padding: 28px 42px 42px 42px;
+		padding: 16px 16px 6px 16px;
 		width: {{$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth}};
 		border-radius: 2px;
 	}
@@ -1092,8 +1095,8 @@ button.tc-btn-invisible.tc-remove-tag-button {
 .tc-site-title,
 .tc-titlebar {
 	font-weight: normal;
-	font-size: 2.35em;
-	line-height: 1.35em;
+	font-size: 1.4em;
+	line-height: 1.4em;
 	color: <<colour tiddler-title-foreground>>;
 	margin: 0;
 }
@@ -1196,14 +1199,17 @@ button.tc-btn-invisible.tc-remove-tag-button {
 
 .tc-tiddler-frame .tc-edit-texteditor {
 	width: 100%;
-	margin: 4px 0 4px 0;
+	margin: 0px 0px 0px 0px;
+}
+.tc-edit-texteditor-body{
+	font-size: 1em !important;
 }
 
 .tc-tiddler-frame input.tc-edit-texteditor,
 .tc-tiddler-frame textarea.tc-edit-texteditor,
 .tc-tiddler-frame iframe.tc-edit-texteditor,
 .tc-tiddler-frame select.tc-edit-texteditor {
-	padding: 3px 3px 3px 3px;
+	padding: 0px 0px 0px 0px;
 	border: 1px solid <<colour tiddler-editor-border>>;
 	line-height: 1.3em;
 	font-family: {{$:/themes/tiddlywiki/vanilla/settings/editorfontfamily}};
@@ -1290,7 +1296,7 @@ html body.tc-body.tc-single-tiddler-window {
 */
 
 .tc-editor-toolbar {
-	margin-top: 8px;
+	margin-top: 2px;
 }
 
 .tc-editor-toolbar button {
@@ -1300,7 +1306,7 @@ html body.tc-body.tc-single-tiddler-window {
 	fill: <<colour tiddler-controls-foreground-selected>>;
 	border-radius: 4px;
 	padding: 3px;
-	margin: 2px 0 2px 4px;
+	margin: 2px 0 2px 2px;
 }
 
 .tc-editor-toolbar button.tc-text-editor-toolbar-item-adjunct {
@@ -1465,7 +1471,7 @@ html body.tc-body.tc-single-tiddler-window {
 
 .tc-edit-tags {
 	border: 1px solid <<colour tiddler-editor-border>>;
-	padding: 4px 8px 4px 8px;
+	padding: 0px 0px 0px 0px;
 }
 
 .tc-edit-add-tag {

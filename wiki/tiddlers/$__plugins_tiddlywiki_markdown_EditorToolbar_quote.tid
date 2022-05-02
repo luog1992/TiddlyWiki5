@@ -1,0 +1,17 @@
+caption: {{$:/language/Buttons/Quote/Caption}} (Markdown)
+condition: [<targetTiddler>type[text/x-markdown]]
+created: 20220502104953184
+description: {{$:/language/Buttons/Quote/Hint}}
+icon: $:/core/images/quote
+modified: 20220502104953184
+shortcuts: ((quote))
+tags: $:/tags/EditorToolbar
+title: $:/plugins/tiddlywiki/markdown/EditorToolbar/quote
+type: text/vnd.tiddlywiki
+
+<$action-sendmessage
+	$message="tm-edit-text-operation"
+	$param="prefix-lines"
+	character=">"
+	count="1"
+/>
