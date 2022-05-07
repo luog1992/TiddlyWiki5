@@ -1,0 +1,61 @@
+title: $:/core/ui/SideBar/TabManager
+tags: $:/tags/SideBar
+caption: ＋
+
+\define lingo-base() $:/language/Sidebar/TabManager
+
+\define formatTemplate() 
+    <div class="tc-table-of-contents">
+    <<toc-selective-expandable "$(tocTag)$">>
+    </div>
+\end
+
+\define add-tab-action()
+<$list filter="[<stateTiddler>get[tabName]trim[]!is[blank]]" variable="ignore">
+    <$set name="tocTag" filter="[<stateTiddler>get[tagName]]"> 
+        <$action-createtiddler
+            $basetitle={{{ [<stateTiddler>get[tabName]] }}}
+            $savetitle="$:/temp/Sidebar/TabManager/new-tab"
+            text=<<formatTemplate>>
+        />
+    </$set>
+
+    <$action-listops $tiddler={{$:/temp/Sidebar/TabManager/new-tab}} $tags="$:/tags/SideBar"/>
+    <$action-setfield $tiddler={{$:/temp/Sidebar/TabManager/new-tab}} isSidebarTab=true/>
+
+    <$action-deletefield $tiddler=<<stateTiddler>> $field="tabName"/>
+    <$action-deletefield $tiddler=<<stateTiddler>> $field="tagName"/>
+
+    <$action-sendmessage $message="tm-auto-save-wiki"/>
+</$list>
+\end
+
+\whitespace trim
+<$vars
+    stateTiddler=<<qualify "$:/temp/Sidebar/TabManager/add-tab-form">>
+>
+
+<$keyboard key="enter">
+    <<add-tab-action>>
+    <$edit-text class="py-input" tiddler=<<stateTiddler>> field="tabName" placeholder="tab name..."/>
+</$keyboard>
+
+<table class="tc-tag-manager-table">
+<tbody>
+<tr>
+    <th>TabName</th>
+    <th>Tag</th>
+    <th>Display</th>
+</tr>
+<$list filter="[tag[$:/tags/SideBar]]">
+<tr>
+    <td><<currentTiddler>></td>
+    <td><$edit-text field="includeTags" tag="input" type="text" size="14"/></td>
+    <td><$checkbox field="isDisplay" checked="true" unchecked="false" default="true"/></td>
+</tr>
+</$list>
+
+</tbody>
+</table>
+
+</$vars>
